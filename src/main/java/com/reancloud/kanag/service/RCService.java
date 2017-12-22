@@ -36,8 +36,8 @@ public class RCService {
 	private static String imgFileName="RC_logo";
 	private static String imgFileExt=".jpg";
 	private static String BUCKET_NAME="reancloud-kanag";
-	private static String KEY="AKIAIYEALRXVVDFWI4SQ";
-	private static String SECRET_KEY="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";
+	private static String KEY="";
+	private static String SECRET_KEY="";
 	private static BasicAWSCredentials awsCreds = new BasicAWSCredentials(KEY, SECRET_KEY);
 	
 	private static Logger logger= Logger.getLogger(RCService.class);
