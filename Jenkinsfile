@@ -1,27 +1,24 @@
 pipeline {
     agent any
     tools {
-        maven ‘Maven 3.5’
-        jdk ‘jdk8’
+        maven “Maven 3.5”
+        jdk “jdk8”
     }
+
     stages {
-        stage (‘Initialize’) {
+        stage('Build') {
             steps {
-                sh ‘’’
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ‘’’
+                echo 'Building..'
             }
         }
-
-        stage (‘Build’) {
+        stage('Test') {
             steps {
-                sh ‘mvn install’ 
+                echo 'Testing..'
             }
-            post {
-                success {
-                    junit ‘target/surefire-reports/**/*.xml’ 
-                }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
